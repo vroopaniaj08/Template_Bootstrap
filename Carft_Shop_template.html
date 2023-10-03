@@ -1,242 +1,935 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css"
+    />
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <style>
-      .banner{
+      .banner {
         height: 600px;
-        background-color: #3D626C;
-      }        
-      .banner img{
+        background-color: #3d626c;
+      }
+      .banner img {
         opacity: 0.5;
       }
-      .banner-paragraph{
+      .banner-p {
         width: 50%;
       }
-      @media only screen and (max-width:767px) {
-         .banner-paragraph{
-          color: white !important;
+      @media only screen and (max-width: 767px) {
+        .banner-p {
+          text-align: center !important ;
           width: 100%;
+          font-size: 25px;
+        }
+        .banner-h1 {
+          font-size: 60px !important;
+        }
+        .box p {
           text-align: center !important;
-         }
-         .box-paragraph-alignment{
-          text-align: center;
-         }
-         .section-3-heading{
+        }
+        .design-box {
+          height: 200px !important;
+        }
+        .design-box :nth-child(n) {
           text-align: center !important;
-         }
-         .center-for-small{
+          width: 100% !important;
+        }
+        .box3 {
+          height: 200px !important;
+        }
+        .box2,
+        .box3 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
           text-align: center;
-         }
+        }
+        .style-sec-left {
+          height: 100px !important;
+        }
+
+        .style-sec-right {
+          padding-left: 100px !important;
+          height: 750px !important;
+        }
+        .style-sec-left p {
+          text-align: center !important;
+        }
+        .right-about-sec h1{
+          text-align: center !important;
+        }
+       
       }
-      .banner button:hover{
-        color:black !important;
+      @media only screen and (max-width: 992px) {
+        .left-big-img-sec {
+          height: 200px !important;
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important;
+        }
+        .left-big-img-sec p {
+          width: 50% !important;
+          font-size: 45px !important;
+          text-align: center !important;
+        }
+        .box1,
+        .box4 {
+          height: 500px !important;
+        }
+        .about-sec .row{
+         padding-left: 50px !important;
+
+        }
+        .left-about-sec
+        {
+          
+          height: 300px !important;
+        }
+       .navbar-nav ul 
+       {
+       padding-left: 0px !important;
+       }
       }
-      .banner button::after{
-        content: "";
-        width: 0px;
-        height: 50px;
+
+      .box :nth-child(n) {
+        padding-left: 25px;
         position: absolute;
-        top: 0;
-        left: 0;
-        background-color: white;
-        transition: all 0.5s ease-in-out;
-        z-index: -1 !important;
+        color: #56666c;
       }
-      .banner button:hover:after{
-        width: 100%;
-      }
-      .box span{
-        position: absolute;
-        bottom: 15px;
-      }
-      .box span::after{
-        content: "";
-        position: absolute;
+      .box h2 {
         top: 25px;
-        height: 2px;
-        right: 0;
-        width: 85px;
-        background-color: black;
-        transition: all 0.5s ease-in-out;
       }
-      .box span:hover:after{
-        width: 0px;
-      }
-      .box:hover{
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      }
-      box-paragraph-alignment{
-        text-align: left;
-      }
-      .section-3-heading{
-        text-align: end;
-      }
-      .big-image img{
-        opacity: 0.5;
-      }
-      .bg-image-first{
-        background-image: url("https://mobirise.com/extensions/personam4/assets/images/mbr.jpg");
-        background-repeat: no-repeat;
-        background-size: 100% 250px;
-      }
-      .bg-image-second{
-        background-image: url("	https://mobirise.com/extensions/personam4/assets/images/mbr-4.jpg");
-        background-size: 100% 250px;
-      }
-      .get{
-        position: relative;
+      .box p {
+        position: absolute;
         top: 100px;
-        font-size: 40px;
+        font-size: 19px;
       }
-      .image:hover{
+      .box span {
+        position: absolute;
+        bottom: 25px;
+        font-weight: bold;
+      }
+
+      .design-box :nth-child(n) {
+        position: absolute;
+      }
+      .big-img-sec {
+        background-color: black;
+        background-image: url("https://mobirise.com/extensions/personam4/assets/images/mbr-3.jpg");
+        /* height: 600px; */
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .box1 {
+        background-image: url("	https://mobirise.com/extensions/personam4/assets/images/mbr.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .box4 {
+        background-image: url("	https://mobirise.com/extensions/personam4/assets/images/mbr-4.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .card1:hover {
+        background-color: #3d626c !important;
+      }
+      .card1:hover :nth-child(n) {
+        color: white !important;
+      }
+.footer-sec
+{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ row-gap: 30px;
+}
+      .footer-sec ul 
+      {
+      
+          list-style: none;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+         
+      }
+     
+      .footer-sec ul li 
+      {
+        
+        padding-left: 30px;
+      }
+      .footer-sec ul li a{
+       color:  white;
+       text-decoration: none;
+     
+      }
+      .footer-sec ul li :hover{
+        padding-bottom: 7px;
+        border-bottom: 1px solid white;
+      }
+      .copyright-footer
+      {
+        color: white;
+        word-spacing: 6px;
+        
+      }
+      .btn:hover{
+        color:black !important;
+        background-color: #fdfbfb;
+      }
+      .box_01::hover{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+      .underline:hover {
+        text-decoration: underline;
+      }
+      .getshadow:hover{
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        background-color:#FFF3F3;
       }
-      .box_01{
-        box-shadow: -4px -4px 8px rgba(0, 0, 0, 0.2);
-        z-index:1;
+      .getshadow1:hover{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        background-color:#EAF4F8;
+      }
+      .getshadow2:hover{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        background-color:#d7edd8;
+      }
+      .getshadow3:hover{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       }
     </style>
-</head>
-<body>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #3D626C;">
-        <a class="navbar-brand" href="#" style="color: white">AJ</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#" style="color: white">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
-                Buy
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Ready Made</a>
-                <a class="dropdown-item" href="#">customize</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Apoorv's Special</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" style="color: white">About us</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
-      
+  </head>
+  <body>
+    <nav class="navbar sticky-top  navbar-expand-lg navbar-light py-3 " style="background-color: #3D626C; padding-left: 50px; ">
+
+
+      <a class="text-white navbar-brand  " style="font-family: Georgia, 'Times New Roman', Times, serif;font-size: 30px; letter-spacing: 2px; " href="#">AJ</a>
+      <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav " style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 15px; padding-left: 50px;">
+          <li class=" nav-item active">
+            <a class=" text-white nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class=" nav-item">
+            <a class=" text-white nav-link" href="#">Features</a>
+          </li>
+          <li class=" nav-item">
+            <a class=" text-white nav-link" href="#">Pricing</a>
+          </li>
+          <li class="= nav-item dropdown">
+            <a class="text-white nav-link dropdown-toggle  " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">BUY</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Apoorv's Special</a>
+              <a class="dropdown-item" href="#">Clothing action</a>
+              <a class="dropdown-item" href="#">Accessories</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div
+      class="banner position-relative d-flex flex-column justify-content-center align-items-md-start align-items-center"
+    >
+      <img
+        src="https://mobirise.com/extensions/personam4/assets/images/mbr.jpg"
+        alt=""
+        class="w-100 h-100 position-absolute"
+      />
+
+      <p
+        class="text-white display-1 ml-5 mbr-fonts-style banner-h1"
+        style="z-index: 1; font-weight: 400"
+      >
+        Craft Shop
+      </p>
+      <p
+        class="text-white ml-5 banner-p"
+        style="z-index: 1; font-weight: 400; font-size: 20px"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pulvinar
+        efficitur risus. Nulla elementum suscipit odio
+      </p>
+      <button
+        type="button"
+        class="btn border text-white ml-5"
+        style="width: 200px; height: 70px; z-index: 1; font-weight: 600"
+      >
+        <span>VIEW MORE</span>
+      </button>
+    </div>
+
     <section>
-        <div class="banner position-relative d-flex flex-column justify-content-center align-items-md-start align-items-center">
-            <img class="w-100 h-100 position-absolute" src="https://mobirise.com/extensions/personam4/assets/images/mbr.jpg"/>
-            <p class="text-white display-3 ml-5" style="z-index:1;">Carft Shop</p>
-            <p class="banner-paragraph text-white d-flex justify-content-center justify-content-md-start ml-5" style="z-index:1;font-size:20px; font-weight:500;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pulvinar efficitur risus. Nulla elementum suscipit odio</p>
-            <button class="ml-5 position-relative btn bg-transparent border border-white text-white" style="z-index:1; width:200px;height:50px;">VIEW MORE</button>
-        </div>
-    </section>
-    <section>
-      <div class="container-fluid mt-4">
+      <div class="container-fluid mt-4 mb-4">
         <div class="row">
-          <div class="col-lg-3 col-md-6 col-12 mt-2">
-            <div class="box d-flex flex-column align-items-md-start align-items-center position-relative pt-4 pl-4" style="height:350px; background-color:#D7EDD8">
-              <h2 style="color:#3D626C;">Style</h2>
-              <p class="mt-3 box-paragraph-alignment" style="font-size: 18px; font-weight:300px; color:#3D626C;">Lorem ipsum dolor sit amet, consectetur adipiscing elitdo eiusmod temporeum dicant partem scripserit</p>
-              <span style="color:#3D626C;">VIEW MORE</span>
+          <div class="getshadow2 col-lg-3 col-md-6 col-12">
+            <div
+              class="box d-flex flex-column position-relative align-items-md-start align-items-center"
+              style="height: 400px; background-color: #d7edd8"
+            >
+              <h2>Style</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elitdo
+                eiusmod temporeum dicant partem scripserit.
+              </p>
+              <span class = "underline">VIEW MORE</span>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-12 mt-2">
-            <div class="box d-flex flex-column align-items-md-start align-items-center position-relative pt-4 pl-4" style="height:350px; background-color:#FFF3F3">
-              <h2 style="color:#3D626C;">Fashion</h2>
-              <p class="mt-3 box-paragraph-alignment" style="font-size: 18px; font-weight:300px; color:#3D626C;">Lorem ipsum dolor sit amet, consectetur adipiscing elitdo eiusmod temporeum dicant partem scripserit</p>
-              <span style="color:#3D626C;">VIEW MORE</span>
+          <div class="getshadow col-lg-3 col-md-6 col-12">
+            <div
+              class="box d-flex flex-column position-relative align-items-md-start align-items-center"
+              style="height: 400px; background-color: #fff3f3"
+            >
+              <h2>Style</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elitdo
+                eiusmod temporeum dicant partem scripserit.
+              </p>
+              <span class = "underline">VIEW MORE</span>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-12 mt-2">
-            <div class="box d-flex flex-column align-items-md-start align-items-center position-relative pt-4 pl-4" style="height:350px; background-color:#EAF4F8">
-              <h2 style="color:#3D626C;">Brand</h2>
-              <p class="mt-3 box-paragraph-alignment" style="font-size: 18px; font-weight:300px; color:#3D626C;">Lorem ipsum dolor sit amet, consectetur adipiscing elitdo eiusmod temporeum dicant partem scripserit</p>
-              <span style="color:#3D626C;">VIEW MORE</span>
+          <div class="getshadow1 col-lg-3 col-md-6 col-12">
+            <div
+              class="box d-flex flex-column position-relative align-items-md-start align-items-center"
+              style="height: 400px; background-color: #eaf4f8"
+            >
+              <h2>Style</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elitdo
+                eiusmod temporeum dicant partem scripserit.
+              </p>
+              <span class = "underline">VIEW MORE</span>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-12 mt-2">
-            <div class="box d-flex flex-column align-items-md-start align-items-center position-relative pt-4 pl-4" style="height:350px; background-color:#FFF3F3">
-              <h2 style="color:#3D626C;">Design</h2>
-              <p class="mt-3 box-paragraph-alignment" style="font-size: 18px; font-weight:300px; color:#3D626C;">Lorem ipsum dolor sit amet, consectetur adipiscing elitdo eiusmod temporeum dicant partem scripserit</p>
-              <span style="color:#3D626C;">VIEW MORE</span>
+          <div class="getshadow col-lg-3 col-md-6 col-12">
+            <div
+              class="box d-flex flex-column position-relative align-items-md-start align-items-center"
+              style="height: 400px; background-color: #fff3f3"
+            >
+              <h2>Style</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elitdo
+                eiusmod temporeum dicant partem scripserit.
+              </p>
+              <span class = "underline">VIEW MORE</span>
             </div>
           </div>
         </div>
       </div>
     </section>
+
     <section>
-      <div class="container-fluid mt-3">
+      <div class="container-fluid">
         <div class="row">
-          <div class="section-3-heading col-md-6 d-flex  align-items-center" style="height:250px;font-size:55px;">A new way to create design for you</div>
-          <div class="col-md-6">
-            <p class=" d-flex  align-items-center"  style="height:250px; font-size:20px; line-height:1.5;">Lorem ipsum dolor sit amet, consectetur adipiscing elitdo eiusmod temporeum dicant partem scripserit. Lorem ipsum dolor sit amet, consec tetur adipiscing elit adipiscing elitdo.</p>
+          <div class="col-md-6 col-12">
+            <div
+              class="design-box position-relative"
+              style="height: 250px; color: #3d626c"
+            >
+              <p style="text-align: end; font-size: 50px; top: 30px">
+                A new way to create design for you
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-12">
+            <div
+              class="design-box position-relative"
+              style="height: 250px; font-size: 18px; color: #3d626c"
+            >
+              <p style="width: 80%; top: 50px">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elitdo
+                eiusmod temporeum dicant partem scripserit. Lorem ipsum dolor
+                sit amet, consec tetur adipiscing elit adipiscing elitdo.
+              </p>
+              <span class = "underline"style="bottom: 15px">VIEW MORE</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
     <section>
-      <div class="container-fluid mt-5" style="background-color: #FFF3F3;">
-       <h1 class="text-center">Make Your Style Today</h1>
-       <div class="container mt-4" style="min-height: 500px;">
-         <div class="row">
-          <div class="col-lg-6 col-md-6 col-12" style="height: 500px;">
-             <img class="image w-100" style="height:400px;" src="https://mobirise.com/extensions/personam4/assets/images/mbr-1.jpg"/>
-             <h1 class="center-for-small">Ideas</h1>
-             <p class="center-for-small">Project</p>
+      <div
+        class="container-fluid mt-4 mb-4 pt-5"
+        style="background-color: #fff3f3"
+      >
+        <h1 class="display-4" style="text-align: center">
+          Make Your Style Today
+        </h1>
+        <div
+          class="row mt-5 d-flex justify-content-lg-center justify-content-md-around"
+        >
+          <div class="col-lg-6 col-md-5 col-12" style="height: 500px">
+            <img class = "getshadow3"
+              src="https://mobirise.com/extensions/personam4/assets/images/mbr-1.jpg"
+              style="width: 100%; height: 80%"
+            />
+            <h2 style="color: #3d626c">Ideas</h2>
+            <h5 style="color: #9a9e9f">Project</h5>
           </div>
-          <div class="col-lg-4 col-md-6 col-12 offset-lg-2" style="height: 500px;">
-            <img class="image w-100" style="height:400px;" src="https://mobirise.com/extensions/personam4/assets/images/mbr-4.jpg"/>
-            <h1 class="center-for-small">Ideas</h1>
-            <p class="center-for-small">Project</p>
+
+          <div
+            class="col-lg-4 col-md-5 col-12 offset-lg-1"
+            style="height: 500px"
+          >
+            <img class = "getshadow3"
+              src="https://mobirise.com/extensions/personam4/assets/images/mbr-4.jpg"
+              style="width: 100%; height: 80%"
+            />
+            <h2 style="color: #3d626c">Ideas</h2>
+            <h5 style="color: #9a9e9f">Project</h5>
           </div>
-         </div>
-         <div class="row">
-          <div class="col-lg-4 col-md-6 col-12" style="height: 500px;">
-            <img class="image w-100" style="height:400px;" src="https://mobirise.com/extensions/personam4/assets/images/mbr-4.jpg"/>
-            <h1 class="center-for-small">Ideas</h1>
-            <p class="center-for-small">Project</p>
+        </div>
+        <div
+          class="row mt-5 d-flex justify-content-lg-center justify-content-md-around"
+        >
+          <div class="col-lg-4 col-md-5 col-12" style="height: 500px">
+            <img class = "getshadow3"
+              src="https://mobirise.com/extensions/personam4/assets/images/mbr-4.jpg"
+              style="width: 100%; height: 80%"
+            />
+            <h2 style="color: #3d626c">Ideas</h2>
+            <h5 style="color: #9a9e9f">Project</h5>
           </div>
-          <div class="col-lg-6 col-md-6 col-12  offset-lg-2" style="height: 500px;">
-             <img class="image w-100" style="height:400px;" src="https://mobirise.com/extensions/personam4/assets/images/mbr-1.jpg"/>
-             <h1 class="center-for-small">Ideas</h1>
-             <p class="center-for-small">Project</p>
+          <div
+            class="col-lg-6 col-md-5 col-12 offset-lg-1"
+            style="height: 500px"
+          >
+            <img class = "getshadow3"
+              src="https://mobirise.com/extensions/personam4/assets/images/mbr-1.jpg"
+              style="width: 100%; height: 80%"
+            />
+            <h2 style="color: #3d626c">Ideas</h2>
+            <h5 style="color: #9a9e9f">Project</h5>
           </div>
-          
-         </div>
-       </div>
+        </div>
       </div>
     </section>
-    <section class=" box_01 big-image bg-dark position-relative" style="min-height: 500px;">
-      <img class="position-absolute w-100" style="height: 100% !important;" src="https://mobirise.com/extensions/personam4/assets/images/mbr-3.jpg"/>
-      <div style="top:0; left:0;" class="position-absolute container-fluid">
-        <div class="row" >
-          <div class="col-lg-6 d-flex align-items-center" style="height:494px;">
-            <h1 class="text-white display-3 text-center">A New Way To Create Design</h1>
+
+    <section>
+      <div class="container-fluid big-img-sec">
+        <div class="row">
+          <div
+            class="left-big-img-sec col-lg-6 col-md-12 d-flex align-items-lg-center justify-content-lg-center"
+            style="height: 600px"
+          >
+            <p style="font-size: 55px; width: 80%; color: #fff3f3">
+              A New Way To Create Design
+            </p>
           </div>
-          <div class="col-lg-6">
+          <div class="right-big-img-sec col-lg-6 col-md-12 col-12">
             <div class="row">
-              <div class="bg-image-first col-md-6 col-12 bg-danger" style="height:250px;"></div>
-              <div class="col-md-6 col-6" style="height:250px;text-align: center;background-color: #FFF3F3;"><span class = "get">GET</span></div>
-              <div class="col-md-6 col-6" style="height:250px;text-align: center;background-color: #FFF3F3;"><span class = "get">SET</span></div>
-              <div class="bg-image-second col-md-6 col-12 bg-info" style="height:250px"></div>
-           </div>
+              <div
+                class="box1 col-lg-6 col-md-12 col-12"
+                style="height: 300px"
+              ></div>
+              <div
+                class="box2 col-lg-6 col-md-6 col-12"
+                style="height: 300px; background-color: #d7edd8"
+              >
+                <h1 style="font-size: 50px; padding: 20px">
+                  Create Your Unique Style
+                </h1>
+              </div>
+              <div
+                class="box3 col-lg-6 col-md-6 col-12"
+                style="height: 300px; background-color: #f6f6f6"
+              >
+                <p style="font-size: 25px; align-items: center; padding: 15px">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elitdo
+                  eiusmod temporeum dicant partem scripserit.
+                </p>
+              </div>
+              <div
+                class="box4 col-lg-6 col-md-12 col-12"
+                style="height: 300px"
+              ></div>
+            </div>
+          </div>
         </div>
-      </div>  
+      </div>
     </section>
-</body>
+
+    <section>
+      <div class="container-fluid">
+        <div class="row style-sec" style="color: #3d626c">
+          <div
+            class="style-sec-left col-md-4 col-12 d-flex align-items-center justify-content-center"
+            style="height: 500px; background-color: #FFF3F3"
+          >
+            <p class="display-4" style="text-align: end; padding-top: 20px">
+              Unique Style
+            </p>
+          </div>
+          <div
+            class="style-sec-right col-md-8 col-12"
+            style="
+              height: 500px;
+              background-color: #f6f6f6;
+              padding-top: 30px;
+              padding-left: 20px;
+            "
+          >
+            <h2>A New Way To Create Design</h2>
+            <p style="width: 70%">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              vulputate est leo, vitae auctor metus eleifend eu. Quisque
+              fermentum nisi sed convallis ornare.
+            </p>
+            <ul style="padding: 10px">
+              <li>Aliquam lorem ante, dapibus in, viverra quis, feugiat</li>
+              <li>
+                Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.
+                Aenean
+              </li>
+              <li>
+                Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies
+                nisi nam
+              </li>
+              <li>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+              </li>
+              <li>Maecenas tempus, tellus eget</li>
+              <li>
+                Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id,
+                lorem. neque
+              </li>
+              <li>
+                Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem
+                maece
+              </li>
+              <li>
+                Venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget
+                eros lorem
+              </li>
+              <li>Nullam quis ante. Etiam sit amet eget eros faucibus tinci</li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+
+    <section>
+      <div class="container-fluid border border-dark" style="padding-top: 50px; padding-bottom: 50px;">
+        <h1 class="display-4 pb-4" style="text-align: center; color: #3d626c">
+          Craft Shop Features
+        </h1>
+        <div class="cards  d-flex flex-column align-items-center">
+          <div
+            class="card1 m-2 pl-4"
+            data-toggle="collapse"
+            data-target="#card1collapse"
+            style="background-color: #f6f6f6; height: 80px; width: 80%"
+          >
+            <i
+              class="fa fa-chevron-down mr-1"
+              style="margin-top: 30px; color: #3d626c"
+            ></i>
+            <span
+              style="
+                color: #3d626c;
+                font-size: 30px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+              "
+            >
+              Design</span
+            >
+          </div>
+          <div
+           class="collapse p-2 " id="card1collapse"
+            style="height: 100px; width: 80% ;color: #3d626c;
+            background-color: #FFF3F3;" 
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+            excepturi sit perspiciatis eveniet vitae eum facilis nobis officiis
+            aperiam beatae doloremque a corporis optio et repellat obcaecati,
+            ipsa quia quis! Quae quibusdam suscipit dolor ea molestiae sint
+            vero. Nemo magnam veniam odio facilis earum. Numquam quis alias
+            ullam temporibus minus.
+          </div>
+          <div
+            class="card1 m-2 pl-4"
+            data-toggle="collapse"
+            data-target="#card2collapse"
+            style="background-color: #f6f6f6; height: 80px; width: 80%"
+          >
+            <i
+              class="fa fa-chevron-down mr-1"
+              style="margin-top: 30px; color: #3d626c"
+            ></i>
+            <span
+              style="
+                color: #3d626c;
+                font-size: 30px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+              "
+            >
+              Brand</span
+            >
+          </div>
+          <div
+           class="collapse p-2 " id="card2collapse"
+            style="height: 100px; width: 80% ;color: #3d626c;
+            background-color: #FFF3F3;" 
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+            excepturi sit perspiciatis eveniet vitae eum facilis nobis officiis
+            aperiam beatae doloremque a corporis optio et repellat obcaecati,
+            ipsa quia quis! Quae quibusdam suscipit dolor ea molestiae sint
+            vero. Nemo magnam veniam odio facilis earum. Numquam quis alias
+            ullam temporibus minus.
+          </div>
+          <div
+            class="card1 m-2 pl-4"
+            data-toggle="collapse"
+            data-target="#card3collapse"
+            style="background-color: #f6f6f6; height: 80px; width: 80%"
+          >
+            <i
+              class="fa fa-chevron-down mr-1"
+              style="margin-top: 30px; color: #3d626c"
+            ></i>
+            <span
+              style="
+                color: #3d626c;
+                font-size: 30px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+              "
+            >
+              Style </span
+            >
+          </div>
+          <div
+           class="collapse p-2 " id="card3collapse"
+            style="height: 100px; width: 80% ;color: #3d626c;
+            background-color: #FFF3F3;" 
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+            excepturi sit perspiciatis eveniet vitae eum facilis nobis officiis
+            aperiam beatae doloremque a corporis optio et repellat obcaecati,
+            ipsa quia quis! Quae quibusdam suscipit dolor ea molestiae sint
+            vero. Nemo magnam veniam odio facilis earum. Numquam quis alias
+            ullam temporibus minus.
+          </div>
+          <div
+            class="card1 m-2 pl-4"
+            data-toggle="collapse"
+            data-target="#card4collapse"
+            style="background-color: #f6f6f6; height: 80px; width: 80%"
+          >
+            <i
+              class="fa fa-chevron-down mr-1"
+              style="margin-top: 30px; color: #3d626c"
+            ></i>
+            <span
+              style="
+                color: #3d626c;
+                font-size: 30px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+              "
+            >
+              Fashion</span
+            >
+          </div>
+          <div
+           class="collapse p-2 " id="card4collapse"
+            style="height: 100px; width: 80% ;color: #3d626c;
+            background-color: #FFF3F3;" 
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+            excepturi sit perspiciatis eveniet vitae eum facilis nobis officiis
+            aperiam beatae doloremque a corporis optio et repellat obcaecati,
+            ipsa quia quis! Quae quibusdam suscipit dolor ea molestiae sint
+            vero. Nemo magnam veniam odio facilis earum. Numquam quis alias
+            ullam temporibus minus.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="img-only" style="height: 500px ; ">
+        <img
+          src="https://mobirise.com/extensions/personam4/assets/images/mbr.jpg"
+          height="100%"
+          width="100%"
+         
+        />
+      </div>
+    </section>
+
+    <section>
+<div class="container-fluid">
+  <div class="sales-sec pt-5 pb-5">
+    <p class="display-3  text-center"> Sale Countdown!</p>
+    <div class="row d-flex justify-content-around p-5">
+      <div class="col-2 " style="height: 100px; text-align: center;">
+      <h1>00</h1>
+      <h6>Days</h6>
+      </div>
+      <div class="col-2 " style="height: 100px; text-align: center;">
+      <h1>00</h1>
+      <h6>Hours</h6>
+      </div>
+      <div class="col-2 " style="height: 100px; text-align: center;">
+      <h1>00</h1>
+      <h6>Minutes</h6>
+      </div>
+      <div class="col-2 " style="height: 100px; text-align: center;">
+      <h1>00</h1>
+      <h6>Seconds</h6>
+      </div>
+     
+    </div>  
+   <div class="row   d-flex justify-content-center"  >
+ <div class="col-lg-3 col-md-4 col-8  m-3" style="height: 250px;">
+<img src="https://mobirise.com/extensions/personam4/assets/images/shop0.jpg" class = "getshadow3"
+height="100%" width="100%" alt="">
+</div>
+ <div class="col-lg-3 col-md-4 col-8   m-3" style="height: 250px;">
+<img src="https://mobirise.com/extensions/personam4/assets/images/shop1.jpg" class = "getshadow3" alt=""
+height="100%" width="100%">
+</div>
+ <div class="col-lg-3 col-md-4 col-8  m-3" style="height: 250px;">
+<img src="https://mobirise.com/extensions/personam4/assets/images/shop2.jpg" class = "getshadow3" alt=""
+height="100%" width="100%">
+</div>
+ <div class="col-lg-3 col-md-4 col-8   m-3" style="height: 250px;">
+<img src="https://mobirise.com/extensions/personam4/assets/images/shop4.jpg" class = "getshadow3" alt=""
+height="100%" width="100%">
+</div>
+ <div class="col-lg-3 col-md-4 col-8  m-3" style="height: 250px;">
+<img src="https://mobirise.com/extensions/personam4/assets/images/shop6.jpg" class = "getshadow3" alt=""
+height="100%" width="100%">
+</div>
+ <div class="col-lg-3  col-md-4 col-8  m-3" style="height: 250px;">
+<img src="https://mobirise.com/extensions/personam4/assets/images/shop7.jpg" class = "getshadow3" alt=""
+height="100%" width="100%">
+</div>
+ </div>
+      
+    </div>
+  </div>
+</div>
+     
+    </section>
+
+
+    <section>
+      <div class="container-fluid " style=" width: 100%;
+      background-color: #FFF3F3;
+      padding-top: 100px;
+      padding-bottom: 100px; 
+      ">
+    <h1  style="text-align: center; color: #56666c;
+    font-size: 50px; padding-bottom: 30px;
+    "
+    
+    >Our Clients</h1> 
+    <div class="row d-flex justify-content-center" >
+      <div class=" col-lg-2 col-md-3 col-6 m-2" style="height: 100px; width: 100px;
+      background-image: url('https://mobirise.com/extensions/personam4/assets/images/1.png');
+      background-repeat: no-repeat;
+      background-position: center;">
+      
+      </div> 
+
+      <div class=" col-lg-2 col-md-3 col-6 m-2" style="height: 100px; 
+      background-image: url('https://mobirise.com/extensions/personam4/assets/images/2.png');
+      background-repeat: no-repeat;
+      background-position: center;">
+   
+    </div>
+    <div class=" col-lg-2 col-md-3 col-6 m-2" style="height: 100px; 
+    background-image: url('https://mobirise.com/extensions/personam4/assets/images/3.png');
+    background-repeat: no-repeat;
+    background-position: center;">
+ 
+  </div>
+  <div class=" col-lg-2 col-md-3 col-6 m-2" style="height: 100px; 
+  background-image: url('https://mobirise.com/extensions/personam4/assets/images/4.png');
+  background-repeat: no-repeat;
+  background-position: center;">
+
+</div>
+<div class=" col-lg-2  col-md-3 col-6 m-2" style="height: 100px; 
+  background-image: url('https://mobirise.com/extensions/personam4/assets/images/5.png');
+  background-repeat: no-repeat;
+  background-position: center;">
+
+</div>
+<div class=" col-lg-2 col-md-3 col-6 m-2" style="height: 100px; 
+  background-image: url('https://mobirise.com/extensions/personam4/assets/images/2.png');
+  background-repeat: no-repeat;
+  background-position: center;">
+
+</div>
+<div class=" col-lg-2 col-md-3 col-6 m-2" style="height: 100px; 
+  background-image: url('https://mobirise.com/extensions/personam4/assets/images/3.png');
+  background-repeat: no-repeat;
+  background-position: center;">
+
+</div>
+<div class=" col-lg-2 col-md-3 col-6 m-2" style="height: 100px; 
+  background-image: url('https://mobirise.com/extensions/personam4/assets/images/4.png');
+  background-repeat: no-repeat;
+  background-position: center;">
+
+</div>
+<div class=" col-lg-2 col-md-3 col-6 m-2" style="height: 100px; 
+  background-image: url('https://mobirise.com/extensions/personam4/assets/images/5.png');
+  background-repeat: no-repeat;
+  background-position: center;">
+
+</div>
+<div class=" col-lg-2 col-md-3 col-6 m-2" style="height: 100px; 
+  background-image: url('https://mobirise.com/extensions/personam4/assets/images/1.png');
+  background-repeat: no-repeat;
+  background-position: center;">
+
+</div>
+    </div>
+    </section>
+
+   
+    <section>
+      <div class="container-fluid  d-flex align-items-center justify-content-center pt-5
+      pb-5 " style="height: 400px; width: 100%;
+      background-color: #fdfbfb;" >
+
+        <div id="carouselExampleSlidesOnly" class="carousel slide d-flex justify-content-center p-2" data-ride="carousel">
+
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleSlidesOnly" data-slide-to="0" class="active bg-dark"></li>
+            <li data-target="#carouselExampleSlidesOnly" data-slide-to="1" class="bg-dark"></li>
+            <li data-target="#carouselExampleSlidesOnly" data-slide-to="2" class="bg-dark"></li>
+          </ol>
+
+          <div class="carousel-inner " style="width: 100%; color: #3d626c;">
+
+            <div class="carousel-item active p-5" style="
+            background-color: #EAF4F8;">
+                <p style="font-size: 23px; text-align: justify;">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti inventore, quo nisi odio ipsam fugiat quos tenetur dolore, doloribus voluptatem.
+                </p>
+                <h4 style="text-align: center;">Kevin Jonse</h4> 
+                <h6 style="text-align: center;">Developer</h6>
+            </div>
+            <div class="carousel-item  p-5 " style="background-color: #FFF3F3;">
+              <p style="font-size: 23px; text-align: justify;">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti inventore, quo nisi odio ipsam fugiat quos tenetur dolore, doloribus voluptatem.
+              </p>
+              <h4 style="text-align: center;">Ann Nystrom</h4> 
+              <h6 style="text-align: center;">Designer</h6>
+            </div>
+            <div class="carousel-item   p-5" style="background-color: #D7EDD8;">
+             <p style="font-size: 23px; text-align: justify;">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti inventore, quo nisi odio ipsam fugiat quos tenetur dolore, doloribus voluptatem.
+                </p>
+                <h4 style="text-align: center;">Jason Brown</h4> 
+                <h6 style="text-align: center;">Manager</h6>
+            </div>
+          </div>
+        </div>
+    
+
+      </div>
+    </section>
+
+    <section>
+      <div class="about-sec container-fluid  pt-5 pb-5" style="background-color: #F6F6F6; ">
+<div class=" row   justify-content-center  "   >
+  <div class=" right-about-sec col-lg-6 col-md-12 col-12  " style="height: 400px ;">
+  <h1 class=" mb-4" style="font-size: 50px; color: #3d626c;">About Store</h1>
+  <p style="line-height: 170%; text-align: justify; color: #9a9e9f">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate est leo, vitae auctor metus eleifend eu. Quisque fermentum nisi sed convallis ornare. Aenean laoreet, libero eget pharetra laoreet, lectus augue auctor justo, et condimentum elit metus vitae enim. Maecenas tincidunt tempus eros, eget aliquam nibh dapibus ornare. Curabitur egestas gravida mi nec egestas. Donec urna diam, tempus non risus pretium, tristique consequat elit. Praesent vitae eros molestie, dapibus nunc ac, tristique lectus. Praesent ultricies mi sit amet sapien cursus bibendum.</p>
+  </div>
+  <div class="left-about-sec col-lg-4 col-md-12 col-12  d-flex flex-column align-items-md-start  align-items-center" style="height: 400px; padding-top: 90px; font-size: 17px;word-spacing: 3px;">
+      <span class="mb-3" style="color: #9a9e9f;"><strong style="color: #3d626c;">MORE INFO :</strong>  aj@gmail.com </span>
+      <span class="mb-3" style="color: #9a9e9f;" ><strong style="color: #3d626c;" >CATEGORY :</strong>  creative </span> 
+      <span class="mb-3" style="color: #9a9e9f;"><strong style="color: #3d626c;" >DATE : </strong>  December 08, 2003 </span>
+      <span class="mb-3" style="color: #3d626c;"><strong style="color: #3d626c;" > SHARE : </strong>  <i class="fa fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        <i class="fa fa-youtube-play" aria-hidden="true"></i>
+        <i class="fa fa-skype" aria-hidden="true"></i>
+      </span>
+  </div>
+</div>
+        
+      </div>
+    </section>
+
+    <section class=" social-network-sec ">
+      <div class="container-fluid">
+        <div class="row   d-flex align-items-center justify-content-center"
+        style="color: #3d626c; font-size: 18px;">
+             <div class="col-lg-6 col-md-6 col-8 d-flex flex-column justify-content-center align-items-center" style="height:  350px;">
+            <h2 class="mb-4">Social Network</h2>
+            <p class="text-center mb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam dolor numquam libero soluta corporis exercitationem rerum error quis, quam delectus repellat.</p>
+            <span style="word-spacing: 10px;" class="mb-4">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                    <i class="fa fa-skype" aria-hidden="true"></i>
+                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+  
+  
+                  
+            </span>
+            </div>
+  
+        </div>
+
+      </div>
+      
+      
+    </section>
+
+    <footer>
+      <div class="container-fluid">
+       
+        <div class=" row footer-sec" style="height: 200px; background-color: #3d626c;">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Contacts</a></li>
+          </ul>
+        <div class="line-footer-sec" style="height: 1px; width: 80%; background-color: white;"></div>
+        <div class="copyright-footer">
+          <span> <i class="fas fa-copyright"></i>  2023 CraftShop AJ,Inc</span>
+        </div>
+
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
